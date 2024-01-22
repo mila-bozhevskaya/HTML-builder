@@ -8,6 +8,6 @@ const rStream = fs.createReadStream(path.join(__dirname, fileName), 'utf-8');
 
 let data = '';
 
-rStream.on('data', chunk => data += chunk);
+rStream.on('data', (chunk) => (data += chunk));
 rStream.on('end', () => stdout.write(data));
-rStream.on('error', error => console.log('Error', error.message));
+rStream.on('error', (error) => console.log('Error', error.message));
